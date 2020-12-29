@@ -1,0 +1,319 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+}
+
+html, body {
+  background: #e63946;
+  height: 100%;
+}
+
+$font-family: 'Montserrat', sans-serif;
+
+body {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  color: #1D3557; // TODO: this color should go in a palette
+  touch-action: pan-x pan-y;
+}
+
+* {
+  outline: none !important;
+  box-sizing: border-box;
+}
+
+*:before {
+  box-sizing: inherit;
+}
+
+*:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, input, button {
+  font-family: $font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+// main-background
+
+.container {
+  max-width: 700px !important;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  width: auto;
+}
+
+.col-xs-4 {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-xs-4 {
+  flex: 0 0 33.33333333%;
+  max-width: 33.33333333%;
+}
+
+.body-inner {
+  position: relative;
+  height: 100%;
+
+  &__circles {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__bug {
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 600;
+    opacity: 0.75;
+    margin-top: 15px;
+    position: relative;
+    z-index: 1;
+
+    &, a {
+      color: white;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    z-index: 1;
+
+    &--one {
+      height: 494px;
+      width: 494px;
+      top: -270px;
+      right: -250px;
+      opacity: 0.16;
+    }
+
+    &--two {
+      opacity: 0.12;
+      height: 694px;
+      width: 694px;
+      top: -100px;
+      right: -390px;
+    }
+  }
+}
+
+.logo-quiz-root {
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+// header
+
+@mixin vh-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-wrapper {
+  margin: 0 20px;
+  position: relative;
+  @include vh-center;
+  flex-direction: column;
+  height: 80px;
+}
+
+.header-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  @include vh-center;
+}
+
+.header-title {
+  color: white;
+  font-size: 1.25rem;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 0;
+  font-weight: 700;
+
+  h3 {
+    font-size: 1em;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fade-in 0.25s ease forwards;
+
+  &__backdrop {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &__wrapper {
+    max-width: 90%;
+    background: #F4F7F3;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    transform: translateY(10px);
+    opacity: 0;
+    animation: fade-in-up 0.25s ease forwards;
+    animation-delay: 0.25s;
+  }
+}
+
+.logout-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.placeholder-loading {
+  opacity: 1;
+  background: white !important;
+  max-width: 100%;
+}
+
+@keyframes glow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -135% 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// utils
+
+.vh-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v-center {
+  display: flex;
+  align-items: center;
+}
+
+.h-center {
+  display: flex;
+  justify-content: center;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.glow-loader {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 3px;
+  transition: .3s;
+  background-image: linear-gradient(-90deg, #e7e8e5 0, #f1f1f1 50%, #e7e8e5 100%);
+  background-size: 400% 400%;
+  animation: 1.3s infinite glow;
+  background-repeat: inherit;
+  opacity: 1;
+}
+
+@media (min-width: 300px) {
+  .modal__wrapper {
+    max-width: 300px;
+  }
+}

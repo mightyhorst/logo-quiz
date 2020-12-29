@@ -1,0 +1,24 @@
+{
+  "npmScope": "logo-quiz",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "logo-quiz": {
+      "tags": []
+    },
+    "logo-quiz-e2e": {
+      "tags": []
+    },
+    "api": {
+      "tags": []
+    },
+    "models": {
+      "tags": []
+    }
+  }
+}
